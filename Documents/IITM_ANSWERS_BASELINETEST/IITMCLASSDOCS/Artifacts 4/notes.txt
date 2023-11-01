@@ -1,0 +1,107 @@
+Cohesion
+ - Bring in all related functionality
+   in one class / module.
+Coupling
+ - Atleast 2 aspects
+
+SOLID
+ - Set of standards / guidance 
+   for a software implementation
+   to increase it's life span.
+=====================================
+S - Single Responsibility Principle
+What?
+ - One class should implement a single
+   functionality/feature.
+ - If there is a change in that functionality
+   only the above class should change.
+After Code walkthrough
+ - 
+O - Open Closed Principle
+What?
+ - Open for Extension and Closed for Changes.
+ - 
+How?
+[Open for Extension]
+ - Define a class with Abstraction which will
+   enable extension.
+[Closed for Modification]
+ - Create new implementation based on 
+   the abstraction to seperate out the
+   functional logic from pre-existing code. 
+============================================
+L - Liskov Substitution Principle
+What?
+ - A Derived class should be able to replace
+   base class and product should NOT crash.
+ - Passing a subclass instance instead of
+   base class instance to a pre existing consumer
+   should not break the functionality.
+How?
+ - If we have Base class defined with a purpose
+   of generalizing across ALL Subclasses, then
+   liskov will fall in place.
+ - This principle is applicable ONLY when
+   IS-A Relationship is established.
+=============================================
+I - Interface Seggregation Principle
+What?
+ - Provide the functionality based on Client
+   Requirements. Give ONLY what the client wants.
+ - Think from a consumer prespective.
+==============================================
+D - Dependency Inversion Principle
+What?
+ - A consumer should always depend on
+   absracted layer because,
+    1. Any changes to the existing
+       implementation of the 
+       downstream systems will NOT 
+       impact the consumer.
+
+class Employee:
+   <Dict with EMp Name>
+  @absractMethod
+  getWorkProfileID()
+
+  getName():
+    return dict[id]
+    
+  few Absract Methods
+  few Generic Methods
+
+class Employee(ABC):
+  ONLY have Absract Methods
+
+class Designer(Employee):
+class Tester(Employee):
+class Developer(Employee):
+
+Manager mgr = Manager(employees)
+mgr.addEmployee(Designer("D")
+mgr.addEmployee(Tester("E"))
+mgr.addEmployee(Developer("F"))
+
+Employee someEmp = mgr.getEmployee("D")
+print(someEmp.getId())
+=========================================
+Application -> Desktop (machine) -> EXE/DLL
+SOA :- Service Oriented Architecture
+Thin Client -> Desktop (machine) -> ligh weight EXE
+EXE -> "My Server" -> "Perform Logic + "My Database"
+"My Bulk Server"
+ - If this were down, application was down
+Microservices :- Service Oriented Architecture
+ - Split the services in to smaller chunks
+   [My Small Server1, My Small Server2,...]
+ - Deployment needs to be independent
+ - Small unit should have an Independent Database per functionality
+Mobile Phone -> 5 Apps
+Bicycle App -> 
+     1 Microservice (fetch user profile)
+     1 Microservice (measure the distance)
+Install my Bicycle App
+ - Installing an APP on phone
+ - Registering with a back end for this app
+ - back end :- 3 Microservices.
+ - 3 Microservices :- 3 Unique Databases.

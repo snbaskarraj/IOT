@@ -1,0 +1,68 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2709
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;}
+{\*\expandedcolortbl;;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww28600\viewh17440\viewkind0
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 /usr/local/bin/python3.11 /Users/snbaskarraj/Documents/IITM_ANSWERS_BASELINETEST/IITMCLASSDOCS/iot/C03-Project-01-Simple-Smart-Home 3/main.py \
+\
+Smart Home Simulation started.\
+Intitate the device creation and registration process.\
+\
+Creating the Light devices for their respective rooms.\
+Edge server : b'\{"type": "register", "flag": "SYN", "device_id": "light_1", "room_type": "Kitchen", "device_type": "LIGHT"\}'\
+Light Device - light_1 : b'\{"type": "register", "flag": "ACK", "device_id": "light_1", "room_type": "Kitchen", "device_type": "LIGHT"\}'\
+Edge server : b'\{"type": "register", "flag": "SYN", "device_id": "light_2", "room_type": "Kitchen", "device_type": "LIGHT"\}'\
+Light Device - light_2 : b'\{"type": "register", "flag": "ACK", "device_id": "light_2", "room_type": "Kitchen", "device_type": "LIGHT"\}'\
+\
+***********************\
+\
+Creating the AC devices for their respective rooms. \
+Edge server : b'\{"type": "register", "flag": "SYN", "device_id": "ac_1", "room_type": "BR1", "device_type": "AC"\}'\
+AC Device - ac_1 : b'\{"type": "register", "flag": "ACK", "device_id": "ac_1", "room_type": "BR1", "device_type": "AC"\}'\
+Edge server : b'\{"type": "register", "flag": "SYN", "device_id": "ac_2", "room_type": "Kitchen", "device_type": "AC"\}'\
+AC Device - ac_2 : b'\{"type": "register", "flag": "ACK", "device_id": "ac_2", "room_type": "Kitchen", "device_type": "AC"\}'\
+\
+***********************\
+\
+***********************\
+Updating light_1 light_intensity to HIGH.\
+Light Device - light_1 : b'\{"type": "set", "flag": "light_intensity", "value": "HIGH"\}'\
+Edge server : b'\{"type": "set", "status": 0, "device_id": "light_1"\}'\
+Light Device - light_1 : b'\{"type": "status"\}'\
+\
+***********************\
+\
+***********************\
+Updating Ac_1 temperature to 18\
+AC Device - ac_1 : b'\{"type": "set", "flag": "temperature", "value": 18\}'\
+Edge server : b'\{"type": "set", "status": 0, "device_id": "ac_1"\}'\
+AC Device - ac_1 : b'\{"type": "status"\}'\
+\
+***********************\
+Update switch status to ON for everything in Kitchen.\
+Light Device - light_1 : b'\{"type": "set", "flag": "switch_state", "value": "ON"\}'\
+Light Device - light_2 : b'\{"type": "set", "flag": "switch_state", "value": "ON"\}'\
+AC Device - ac_2 : b'\{"type": "set", "flag": "switch_state", "value": "ON"\}'\
+Edge server : b'\{"type": "set", "status": 0, "device_id": "light_2"\}'\
+Edge server : b'\{"type": "set", "status": 0, "device_id": "ac_2"\}'\
+Light Device - light_2 : b'\{"type": "status"\}'\
+Edge server : b'\{"type": "set", "status": 0, "device_id": "light_1"\}'\
+AC Device - ac_2 : b'\{"type": "status"\}'\
+Light Device - light_1 : b'\{"type": "status"\}'\
+\
+***********************\
+\
+***********************\
+\
+***********************\
+\
+***********************\
+\
+***********************\
+\
+Smart Home Simulation stopped.\
+\
+Process finished with exit code 0\
+}

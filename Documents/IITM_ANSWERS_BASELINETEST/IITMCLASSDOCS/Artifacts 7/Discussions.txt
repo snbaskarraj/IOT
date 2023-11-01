@@ -1,0 +1,167 @@
+Design Patterns
+Style of Implementing a given problem in a well known documented and researched style.
+
+3 Categories of Design Patterns
+ - Creational Patterns
+The Standards that needs to be followed for "Creating Objects" in a program.
+1. Singleton
+What?
+This is a Creational Pattern where object is created ONLY once.
+
+Ideas for Creating Object Only once
+ I have a Class MyClass.
+a. Ensure that Object is created ONLY once.
+i.) Check for Object is created Already.
+b. Prevent Object Creation if done already.
+i.) Check for Object is created Already.
+
+Python Language Specific Details,
+Private Attribute : Internal to that CLASS.
+Static means = Something that is NOT changing.
+
+In OOP, Static is associated with a Class AND NOT on an object.
+
+Static Method : Is a Method associated with a class.
+
+__int__ is a method for constructor.
+
+How?
+ - Check in Constructor
+ - Create a Private Class Level Attribute
+ - Create a GetInstance Static Method.
+
+When to use this?
+ - Class is Self Sufficient without any dependency.
+ - Many classes are dependent on this unique functionality.
+
+Industry Examples (When it was used)
+ - New Captcha can be generated however the object for Validation of that Captcha is ONLY generated ONCE.
+
+class CaptchaGenerator
+  def getCaptch(self): 
+   return "dfsdf"
+
+class CaptchaValidator
+  def validate(captcha):
+    # some framework to validate
+2. Factory Pattern
+What?
+This is a Creational Pattern where object is created without exposing 
+the logic for creation.
+Instead of Creating an Object we would be asking for an Instance for a given catgory.
+
+How?
+ - Objects are Created Up front(Optional).
+ - Extraction of Objects are based on "Some Category of the Object".
+
+When to use?
+ - When Abstraction for Object Creation is required.
+
+var monitor = LedMonitor()
+var monitor = ComputerFactory.createObject("MONITOR")
+ComputerFacory.createObject("KEYBOARD")
+
+ - Any Category based objects wil FALL under Factory Patterns.
+
+Industry Example?
+WebSite has Authentication Techniques.
+ - oAuth 2.0
+ - OIDC
+ - Email&Password
+
+3. Prototype Pattern
+What?
+This is a creational pattern where objects are NOT created instead copied (DeepCopy).
+
+OOP Copy Concepts
+Shallow Copy and DeepCopy.
+Shallow Copy
+A        B
+1        2
+0x001    0x002
+Copy Value of A INTO B.
+A        B
+1        1
+0x001    0x001
+10       10
+10       ~~
+~~        
+
+Deep Copy
+A        B
+1        2
+0x001    0x002
+DeepCopy Value of A INTO B.
+A        B
+1        2
+0x001    0x002
+10       2
+10       ~~        
+10
+
+DeepCopy is a Object Copying technique where memory location are independent.
+
+How?
+How can we DeepCopy in Python?
+ - Use the Copy Python Package.
+
+When to use? (When will we copy)
+<I copy when I don't know>
+ - Object Creation is VERY Complex.
+    - I can have multiple database connections for creating that class.
+<I copy when we don't want know>
+
+Industry Examples
+ - Admin View and GuestView
+    - TheView Object.
+ - eCommerce WebSite.
+    - CatalogData.
+
+==================================
+Be Informed of any Automation around boilerplate code generation from the IDE / Code Editor.
+==================================
+ - SCM (git)
+ - CI Pipeline (Continous Intg)
+ - CD Pipeline (Continous Deploy)
+ - Runs Automated tests
+==================================
+ - Structural Design Pattern
+This a category of design pattern that needs to be followed for "Arranging objects" in a program.
+
+Adapter Pattern
+What?
+This is a Structural Design Pattern which transforms a request from a client / consumer to be compatible with a reciever.
+
+How?
+
+When to use?
+ - Adapter is used where client requirement does not exactly matches the server expectation and we don't want to modify an existing implementation/class on server.
+ - 2 Systems having compatible issues, we need an adapter to be able to make those systems Compatible.
+ - When the client requirement is in the format and the needs to be converted to match the pre-requisite of the server/interface for execution
+ - Any Translation requirements.
+
+Industry Examples
+ - Level Sensors (1.0, 2.0) :- Chipset 123, Chipset 345
+ - Hardware -> X-Ray Images -> Image Processing System
+ - Version Management
+Client 1.0 Specifications ->
+Tech Currency Update
+ - Improve the software, techology 
+Server 1.0 C++ ->
+Server 2.0 python ->
+ - eCommerce payment systems
+
+ - Behavioral
+This a category of design pattern that needs to be followed for "responsibilities of objects" in a program.
+
+Observer Pattern
+What?
+This is a Behavioral Design Pattern 
+where a change in subject is notified to its observers based on which the observer does SOME business logic.
+
+subject = point of intetest / an entity.
+observer = Object interested in the sibject.
+How?
+
+When to use?
+ - A change in an entity is going to have a system wide impact.

@@ -1,0 +1,80 @@
+RDBMS vs NoSQL
+ - NoSQL is Schema Less - It can accept any data.
+   ER is NOT provided by the DB Engine.
+ - NoSQL data has no limitations on Columns / data type
+   It is not strict OR no restrictions
+---------------------
+{4 fields} ---> {5 fields}
+   --> Load goes for Application layer
+
+UI -> Service Layer -> DAO -> ORM -> DB 
+---------------------
+Data Representation Model
+ -  How should the data be stored in 
+    the disk SO THAT it can align well
+    with business (Product Query Patterns).
+==============================================
+4 Categories of NoSQL
+ - Document DB
+This is a category of NoSQL DBMS where the DRM
+is a JSON type. This means the data is stored
+as JSON in the disk.
+JSON -> Java script Object Notation.
+{
+  "field" : "value",
+  "fields" : ["value1", "value2"],
+  "fieldObj" : {"Obj1: "value1", "Obj2":"value2"}
+  "fieldsObj" : [{"Obj1: "value1", "Obj2":"value2"}]
+}
+DB Providers : MongoDB, Apache CouchDB
+ - KeyValue DB
+This is a category of NoSQL DBMS where
+DRM is Key Value Pair.
+"empd-1-Number":"EmpName-1" -- 1st record
+"empd-2-Number":"EmpName-2" -- 2nd record
+"empd-3-Number":"EmpName-3" -- 3rd record
+"empd-3-UUID"  :"EmpName-3" -- 4rd record
+Easy Access of Records,
+ - Read Heavy Application
+Query to DB for Reading is 
+more than writing to DB.
+ - For a RHA read times should be fast.
+What's the fastest way to fetch your phone?
+ - Only if I already know where 
+   I had kept it.
+KeyValue DB is FAST because of the DRM.
+it knows as part of a Read Query which
+precise memory in the Disk it has to go
+to and hence is extensively in RHA.
+
+DB Providers : Redis, Memcache, DynamoDB
+NonFunctional/Business Requirements,
+ - 
+==============================================
+Client Methods
+Create Database and Create Table
+ - db_object = get_database(dbName)
+ - collection_object = db_object[collectionName]
+ - collection_object.drop()
+------------------------------
+JSON in py == Dict Datatype
+------------------------------
+CRUD Operations on Table
+ - Create
+   collection_object.insert_one(data)
+ - Read
+   collection_object.find_one
+   collection_object.find
+ - Update
+ - Delete
+==============================================
+Operators
+ - $gte ~~ >= 
+ - $gt ~~  > 
+ - $lte ~~ <= 
+ - $lt ~~ <
+ - $eq ~~ ==
+ - $in ~~ IN Clause
+ - NestedObject Query [. operator]
+ - $exists - Checks if fields exists.
+=========================================

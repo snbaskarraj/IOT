@@ -1,0 +1,179 @@
+Design Patterns
+ - This is more of a Standard/Proven means of
+   Solving your problem / Implement features
+   in your product to increase it's Design
+   lifespan.
+ - These are set of rules / guideliness
+   recommended based on an Object Lifecycle.
+ - These are years of research to arrive at
+   those rules.
+Categories of Design Patterns
+ - Creational
+ - Structutal
+ - Behavioral
+
+Creational Design Patterns
+ - This is a category of Design Pattern
+   which dictates / recommends / guides
+   standards for Object Creation.
+Few Creational Design Patterns,
+ - Singleton
+ - Factory
+ - Builder
+ - Prototype
+============================================
+SingleTon
+ What?
+  - This is a creational design design pattern
+    where the object is created ONLY once 
+    and the same instance is shared even
+    if the consumer is seeking for an object
+    N Times.
+ How?
+  - Class Level Variable
+  - Static is something that is fixed 
+    per class
+class GL
+  MLS = Mentoring Lession Session
+  time (10:00 AM IST)
+
+var module1 = GL(10:00 AM IST)
+     time = 10:00
+     MLS = Mentoring Lession Session
+var module2 = GL(12:00 PM IST)
+     time = 12:00
+     MLS = Mentoring Lession Session
+ When?
+  - An Object creation is heavy and need NOT
+    the different for any scenarios.
+    File System Object
+ Examples
+  - OS Level Resources Handle
+  - ORM (Object Relational Mapping)
+ORM
+ - Python ----> Database
+===========================================
+Prototype Pattern
+ what?
+   - This is a creational category
+     design pattern where Objects are NOT
+     created instead COPIED (DeepCopy).
+Object Creation :- Going through Constructor
+Object Copy     :- Going through Memory
+
+How can objects be copied?
+2 ways objects can copied in any PL
+ - Shallow Copy
+   obj1 (0X100)         obj2 (0X200)
+    10                   5
+   (Shallow) Copy Obj1 to Obj2
+   obj1 (0X100)         obj2 (0X100)
+     10                  10
+-->  25                  25
+-->  None                None
+By doing Shallow Copy, the source Object change
+will impact Dest Object.
+When?
+ - object with collections passed around, 
+   prevent deepcopy
+
+ - Deep Copy
+   obj1 (0X100)         obj2 (0X200)
+    10                   5
+   (Deep) Copy Obj1 to Obj2
+   obj1 (0X100)         obj2 (0X300)
+     10                  10
+-->  25                  10
+-->  None                10
+=============================================
+Why would anybody copy?
+ - I Don't Know How to create that Object
+ - I don't care about object creation
+Why / When Prototype?
+ - Complex Object Creation :- Object have large number of arrtibutes
+   where each attributes fetch from Multiple
+   Systems
+ - Create a Base for Starting your feature
+   developmemt
+ - Create Instances from 3rd Party SDKs / Systems
+============================================================
+Factory Patterns
+ What?
+ - This is a creational category of design 
+   pattern where we hide the object creation
+   implementation details.
+Fixed Types is a indication of a Factory.
+Example:
+ - AuthenticationFactory
+    - Password
+    - OTP
+    - BioMetric
+    - oAuth
+    - OIDC
+PassowodAuthInstance = 
+AuthenticationFactory.getInstance(PASSOWRD)
+PassowodAuthInstance.validate(password)
+==========================================
+Builder
+What?
+ - This is a creational category of
+   design pattern where we enable 
+   "Immutabality"
+SDK Example
+  - 10 Classes Implemented in SDK.
+  - A Client / Consumer of this SDK need NOT
+    know how to create object instead can use builder class.
+Example
+Class A is exposed from SDK.
+Client -> A.Builder.withAttr1("1").withAttr2("2").build()
+===========================================================
+Structutal Design Patterns
+These are category of design pattern where standard/guideliness
+are provided to arrange the objects.
+ - Adapter
+ - Proxy
+ - Decorator
+ - Facade
+ - Bridge
+===========================================================
+Adapter Pattern
+ - This is a structurual design pattern where an incompatible
+   client can talk to an existing server / implementation
+   for leveraging a functionality.
+Real world Examples
+ - Third Party Integrations
+    - An Adapter translate the request from client
+      and response from server to be able to leverage
+      the functionality from third party example
+ - Hardware Integration
+ - Tech Migration / Tech Currency Update
+   Legacy Client vs New Clients
+========================================================
+Behavioural Pattern
+ - This is a category of Design Pattern where we need to
+   add a new feature/capability for a class without having 
+   change the existing implementation.
+Observer Pattern (Pub Sub Model)
+Visitor Pattern  (Regex problems)
+State Pattern
+================================================
+Observer Pattern
+ - This is a behavioral pattern category where an
+   observer can exhibit a new behavior based on a change
+   in the subject.
+subject = Point of Interest.
+observer = Interested in the subject.
+
+An Observer is ALWAYS "subscribed" to the Subject.
+  - A change in the subject would broadcast its change
+    to ALL its subscribers.
+  - Observer behavior is based on the event / state of the
+    subject.
+===========================================
+SOA - Microservice (API Driven Design)
+Observor Pattern ----> Event Driven Design
+Subject -->  Topic
+Observer --> Consumer
+Message Brokers :- Apache Kafka, Rabbit MQ
+
+

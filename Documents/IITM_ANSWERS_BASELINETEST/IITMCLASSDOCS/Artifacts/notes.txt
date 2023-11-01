@@ -1,0 +1,88 @@
+Class
+ - Blue print for delivering a feature
+   in a Product.
+Multiple classes are involved for delivering
+a feature(s) in a product.
+
+Object
+ - Anything that is real based on the blue print available
+ - "Instance" of a CLASS
+
+Relationships in OOP
+What?
+ - How classes are related to each other.
+Why?
+ - Generally, multiple classes are involved
+   to deliver a feature.
+Types
+ - IS-A
+Examples:
+    CAR IS-A Vehicle
+    Benz IS-A CAR
+    Apple IS-A Fruit
+    Cricket IS-A Sport
+How?
+ - IS-A Relation is implemented using Inheritence.
+
+ - HAS-A
+Examples:
+   CAR HAS-A Engine
+   STATE HAS-A Roads
+How?
+ - HAS-A Relation is implemented using Composition.
+   
+
+Inheritence
+class Car
+  getWheels
+   return 4
+Base Class :- 
+The class that provides the standard/ default behavior 
+which needs to adhered by the Dervied class.
+Dervied / Subclass :- The class that follows the
+rules set by the base class in addition to have a 
+unique behavior for itself.
+
+What?
+ - This is a technique for implementing IS-A relationship where,
+    1. Base class needs to set standards
+    2. Dervied class MUST have a unique funtionality
+
+How? (In Python)
+Pre-req
+ - Indentation
+ - Debugging shortcuts
+F8 -> Next Line
+F7 -> Step INTO
+F9 -> Run to the next BP ( if available)
+ - Instantiate an Object
+   object_var = ClassName(Optional Args)
+self -> Same as "this" in C#, C++ and Java.
+__init__ -> Is invoked automatically when we create an Instance of a class.
+class DerivedClass(BaseClass): ~~ public class A : public B
+
+Attributes in Python (Data Members of a class)
+ - Data members in a class that can be 
+   leveraged across other class.
+super in Python (Similar to Java and C#)
+ - 
+Protected Functions in Python
+ def _FName():
+
+Private Functions in Python
+ def __FName():
+
+Compiler vs Interpreter
+ - Name Mangling (ABCINT, ABCStr)
+
+Python is a Functional Programming Language
+ - Free of Compilers
+ - Fast (No Layering)
+ - ML Model Programming is done using Python
+ - Open source
+C# World / Java World -> JDK / .net Framework
+======================================================
+Composition
+How?
+ - Property of a class is associated with an object of another
+   class.

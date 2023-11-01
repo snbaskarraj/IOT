@@ -1,0 +1,6 @@
+AWSIoTMQTTClient
+publishTimeoutException
+DEFAULT_OPERATION_TIMEOUT_SEC
+boto3
+
+python BedSideMonitor.py -e a3q7tggmo4svnz-ats.iot.us-east-1.amazonaws.com -r AmazonRootCA1.pem -c 4ccca0e559b1fe25675184a82bc61a117134604d949503c5fce5c94fb2a845dd-certificate.pem.crt -k 4ccca0e559b1fe25675184a82bc61a117134604d949503c5fce5c94fb2a845dd-private.pem.key -id client1 -t iot/bsm

@@ -1,0 +1,71 @@
+Causality
+ - Ability to detect the events
+that happened before or after.
+Synchronization
+ - Is a Technique that implements
+   causality.
+In general, any sync problem needs
+to be implemented using "Time".
+
+In CS, Time is implemented using 
+clocks.
+ - Physical Clocks
+    Is an Implementation of time
+    using a "hardware" material.
+   a. Quatrz Clock
+      Is a physical clock used to implement time
+      where time is calculated based on the
+      resonant frequency of the Quatrz H/W.
+      "Ticks" ~~ "Second"
+      Pros: Cheap.
+      Cons : Its error prone on room Temp.
+      where is it available : In All laptops, desktops
+   b. Cesium Clocks / Atomic Clocks / Reference Clocks / Global Clocks
+        Is a physical clock used to implement time
+      where time is calculated based on the
+      resonant frequency / vibrations calculation
+      of the Cesium H/W.
+      "Ticks" ~~ "Second"
+	Pros: Accurate.
+        Cons : Its costly.
+      where is it available : In GPS
+ - Logical Clocks
+   Is an Implementation of time using 
+   "software" algorithms.
+     - Lamport Clock
+     - Vector Clock
+     - 
+Concurrency : Inability to detect causality.
+Ability to flag that causality cannot be 
+determined.
+Naive Strategy
+ - No sync technique involved
+ - All causal Trxs are successful
+ - All non causal Trnxs gets executed in
+   incorrect order ( there is no concept of 
+   causality detection in this approach )
+
+Lock Strategy
+ - Availbility is compromised for Consistency.
+ - Availability has a direct impact on Scalability
+   Highly Available IS SAME As "Highly Scalable"
+Caller Clock - S1:1, S2:0
+Self Clock   - S1:0, S2:1 (# set_data)
+Tuning :- 
+Self Clock   - S1:1, S2:1 (# tuning)
+
+------------------------------------------
+Clock Skew -> Inform the hardware on your laptop / server
+to increase the resonant frequency so that
+it matches with the NTP Server time.
+
+T-Diff < 125 ms : Skewing
+1000 ms < T-Diff > 125 ms : Stepup
+T-Diff > 1000 s : No Sync
+local : 4:00, 126 ms
+nto : 4:00, 300 ms
+post stepup - local : 4:00, 300 ms ( Trxn1 )
+
+--Recommed a Book--
+Designing Data-Intensive Applications
+ - Martin Kleppmann

@@ -1,0 +1,42 @@
+SQL/RDBMS Databases
+ - Relational / Entity relationship
+   is supported by the DB Provider.
+ - Schema is strict / structured
+ClickHouse DB
+
+NoSQL Databases
+ - No Strict Schema / Schema less
+ - No Relationship exists
+BTree -> Is a DS and data in the disk is stored in this format.
+
+Why NoSQL Database?
+ - No Structure in data coming to a system
+    - File Upload
+    - Images in a file
+    - Payload from iOT devices
+
+Data Representation Model :- How is my 
+data stored in the hard disk.
+
+4 Categories of NoSQL DB's
+ - Document DB
+This is a noSQL DB category where DRM is a 
+document.
+Providers :- MongoDB, Apache Couch DB.
+
+ - KeyValue DB (Read Heavy Application)
+This is a NoSQL DB category where DRM is a 
+key value pair.
+Providers :- Redis, MemcacheDB, DynamoDB.
+Case Study : Twitter
+
+ - WideColumn DB
+This is a noSQL DB category where DRM is a 
+key with dynamic columns.
+Providers :- Cassandra.
+
+ - Graph DB
+This is a noSQL DB category where DRM is a 
+graph data structure.
+Providers :- Neo4j.
+Case Study : eBay, AirBnB

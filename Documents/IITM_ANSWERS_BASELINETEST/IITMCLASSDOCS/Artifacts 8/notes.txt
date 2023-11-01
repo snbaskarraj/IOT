@@ -1,0 +1,108 @@
+RDBMS
+ - Relational DBMS
+Features of RDBMS
+ - Fixed Format for Data
+ - Entity Relation is available OOB
+Primay Key, Foreign Key. 
+Entity Relationship :- The ability to provide
+relationship between 
+multiple tables in a DB.
+Providers
+ - SQL Server
+ - MySQL
+ - PostgreSQL
+ - Oracle
+===================================
+Database -> A persistent storage management system
+Database is a collection of Tables
+Example :- Inventory Database
+
+Tables -> An entity is represented in a table
+Table is Collection of Records
+Example :- Supplier, Parts
+
+Rows and Columns are attributes for an Entity
+Column :- A Representation of a specific
+          aspect of an entity.
+Example :- Name, Address etc.
+Row / Record :- A Representation 
+    of a unit value of an entity.
+Example :- Jackson composites.
+
+=======================================
+Primary Key :- 
+Uniquely Identifies a Record or Row.
+Generally - ID field in a Table.
+Customer -> customer_id -> 123 (UUID to varchar)
+Give me the details of Customer by ID 123
+Customer -> id -> DBA
+========================================
+Indirection :- Abstraction.
+LegacyCustomerMap :- OLD-ID : new-ID
+Customer -> customer_id -> new ID
+========================================
+Foreign Key :- In a table there 
+is an identifier which represents a 
+unique identifier from "ANOTHER" table 
+in the same DB.
+=========================================
+Constraints :- Restrictions / Some Rules
+               / Something that might block you or limit you.
+=========================================
+ - User Journey
+ - Do we have to deal with DB itself
+   OR some application layer can do this?
+ - How do we use it today's development?
+=========================================
+Index
+ Books Example
+ - Index Pages
+Find my interested topic
+ - Read the full book until you find your
+   topic of interest
+ - Go to Index and look for the chapter
+   that might contain your topic and ONLY
+   read that chapter
+Saving time is at what cost?
+ - Additional Storage for Indexing
+Customer Table -> 100 records
+select * from customer where name like 'ajay'
+Name as Index
+ - DB will go to the Index Storage and grab the range of memory address
+ - Scan in Table based on that Range
+Name is NOT Index
+ - Scan Full Table (Full Table Scan / Sequential Scan)
+
+How to know which columns to Index?
+ - Query Patterns
+As part of your schema design we should,
+ - Have a complete list of query patterns
+ - Don't add Index because you need to query data
+   for reporting requirements
+======================================
+SQL queries
+ - A way with a RDBMS db that understands the construct
+Manage Database
+ - Create Database <dbName>
+ - Drop Database <dbName>
+ - Use Database <dbName> {Set it as default DB for all my transaction from now on}
+Manage Tables (Columns)
+ - Create Table <table Name> columns and data types and constraints
+Manage Data (Rows)
+Record in DB ~~ Tuple in Python
+List of Records in DB ~~ List of Tuples in Python
+CRUD Operations
+ - Create ~~ INSERT INTO
+ - Read ~~ SELECT ~~ cursor.fetchall()
+ - Update ~~ UPDATE
+ - Delete ~~ DELETE (soft delete)
+=========================================
+ERR available OOB on RDBMS
+ - JOIN
+This is used to Relate 2 Tables, JOINS
+2 Tables or Merge 2 Table.
+=========================================
+Product -> 5 Features
+1 Feature -> Data from 3 Table
+1 feautre -> 1 View in DB (Any changes in 3 Tables)
+5 elements

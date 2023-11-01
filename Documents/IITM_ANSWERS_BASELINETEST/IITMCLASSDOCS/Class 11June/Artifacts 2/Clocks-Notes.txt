@@ -1,0 +1,41 @@
+An Inventory Mgmt System
+ - Customers -> Customers DB on N1
+	N11, N12, N13 ( Replicas )
+ - Orders -> Orders DB on N2
+	N21, N22, N23 ( Replicas )
+ - Web Server
+ - UI / HTML
+=======================
+DS = Many Machines
+Need for Synchronization
+==========================
+How to detect Causality?
+  - How to know before and after?
+     - Time.
+How to implement Time in CS?
+ - Clocks
+
+Categories of Clock
+ - Physical Clock
+    - Quartz Clock
+       - Quartz Crystal
+    - Atomic Clock
+       - Cesium
+ - Logical Clocks
+   - Lamport Clocks
+   - Vector Clocks
+   - Matrix Clocks
+============================
+DB Study
+ - Data Representation Model
+ - Sync Tech -> Detect Concurrency
+ - Detect Concurrency -> CC Protocols (MVCC)
+ - Commit -> Commit Protocols
+=================================
+Computer Time : 11:53:250ms
+NTP Server Time : 11:53:450ms
+Skewing -> Process for Adjusting time in a constant rate.
+0 < NCT < 250 ms => Skewing
+NCT > 1000s => Don't do anything
+250 < NCT < 1000s => Step-Up
+=================================

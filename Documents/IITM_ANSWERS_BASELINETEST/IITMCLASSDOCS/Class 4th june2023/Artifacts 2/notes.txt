@@ -1,0 +1,50 @@
+Distributed Systems
+ - A Software/Product that is
+   dependent on multiple
+   servers
+ - A Software/Product that is
+   dependent on data existing
+   on multiple servers
+How can we contain data in
+multiple servers?
+ - Replication ( retain the same copy across all instances )
+ - Sharding / Partioning (Splits the data across Instances / Tables )
+==============================
+In a given network
+   	Node-1    Node-2    Node-3
+    	  PG        PG        PG
+Config   Leader  Follower   Follower
+          Tx        Tx        Tx 
+Sync      XX        XX        XX 
+         TxMgr     TxMgr     TxMgr  
+         Port      Port       Port
+Request -> Sync Module 
+        -> "Detect Concurrency"
+CC Control -> "Read Conflict" / "Write Conflict"
+Tx       Commit
+Coordinator/Participants
+Leader/Follower
+Leader Election ->
+
+DistrubutedTrxn
+This is a Transaction which is considered
+to be DONE across all the instances of the DB
+connected in a cluster.
+-----------------------------------------
+Protocol(Standard)
+ - 2 Phase Commit Protocol
+This has 2 Phases, 
+ first phase --> voting phase
+ second phase --> decision phase
+
+sql Query:
+ PGDB - insert in to DB.table values(...)
+success
+------------------------------------------
+Pros and Cons
+Pros
+ - Strong consistency
+ - All or none (Strong consistency)
+Cons
+ - Consensus should be 100%
+ - Single point of failure

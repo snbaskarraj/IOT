@@ -1,0 +1,71 @@
+Distributed Systems
+ - Product is dependent on multiple machines.
+ - Data is available across many servers / nodes
+
+Node :- A Server / A Machine.
+Cluster :- Group of Nodes connected in a network.
+
+Lock :- Take control and avoid any updates from others.
+
+Synchronization
+
+Causality
+ - Ability to Detect the sequence of incoming "events"
+
+Synchronization module / Technique (part of the database)
+ - In CS Time is Implemented using Clocks.
+2 Types of Clocks
+ - Physical Clocks
+    - Quatrz Clock
+      X Number of Ticks = 1 Second
+    - Cesium Clock
+      Atomic Clocks, Reference Clocks, Radio Clocks
+ - Logical Clocks
+These are implementation to detect causality using "counters"
+    - Vector Clock Algo
+    - Lamport Clock Algo
+
+Where does this fit?
+ - This fits in a Database.
+ - This fits as part of a "synchronization module" in a DB.
+
+Vector Clocks
+
+
+S1 - S2 is the family/replica
+S2 - S1 is the family/replica
+
+---S1.AnyOperation() in Progress -> S1 is locked, S2 is also locked.
+---S2.AnyOperation() -> (-1) and please try again later
+---S1.AnyOperation() is Complete -> S1 is unlocked, S2 is unlocked.
+---S2.AnyOperation() in Progress -> S2 is locked, S1 is also locked.
+
+Pros
+ - Gaurantess Data is Consistent.
+
+Cons
+ - Impacts Scaling.
+
+===============================================
+DynamoDB -> 2 Stores
+VClock Logic -> Detects Concurrency -> Concurrency Control Module
+ -> List of Transactions that are concurrent -> CC Protocols ->
+Commit / Rollback -> Distributed Transaction Protocols -> Commit/Rollback
+across machines.
+
+MVCC, 2PL - CC Protocols
+2Phase and 3 Phase - Commit
+================================================
+Protocol -> Set of Rules.
+
+T-Diff < 125 ms : Skewing
+1000 ms < T-Diff > 125 ms : Stepup
+T-Diff > 1000 s : No Sync
+
+What is NTP?
+ - Protocols to compare time against the Internet time.
+ - Based on limits does corresponding actions.
+ - Stepup makes it hard to be a solution for DS Synchronization
+
+What is Stepup in NTP?
+ - Abrupt bump in the time change.
